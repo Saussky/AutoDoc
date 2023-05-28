@@ -8,7 +8,7 @@ export default async function handler(
   // res: NextApiResponse<GithubRepo>
 ) {
   const code = req.body.code
-  const codeWithAddedComments = await tsDocify(code)
+  const codeWithAddedComments = await tsDocify(code, 'TS')
 
   res.status(200).json(codeWithAddedComments)
 }

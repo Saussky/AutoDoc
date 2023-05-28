@@ -1,4 +1,5 @@
 import Header from '@/components/Header'
+import Link from 'next/link'
 
 
 export const Home: React.FC = () => {
@@ -7,8 +8,8 @@ export const Home: React.FC = () => {
       <Header LinksChild={() => {
         return (
           <div className="flex items-center md:block">
-            <a className="mr-8 font-semibold hover:text-white" href="/documentation"
-            >Documentation</a>
+            <Link className="mr-8 font-semibold hover:text-white" href="/documentation"
+            >Documentation</Link>
 
           </div>
         )
@@ -21,18 +22,18 @@ export const Home: React.FC = () => {
       <div
         className="flex flex-col justify-center max-w-xs mx-auto mb-4 sm:max-w-full sm:flex-row"
       >
-        <a
+        <Link
           className="rounded w-full mb-4 whitespace-no-wrap bg-indigo-600 btn btn-tall md:w-auto hover:bg-indigo-500 sm:mr-2"
           href="/gui"
         >
           Get started
-        </a>
-        <a
+        </Link>
+        <Link
           className="rounded w-full mb-4 whitespace-no-wrap bg-gray-800 btn btn-tall md:w-auto hover:bg-gray-600 sm:ml-2"
           href="https://github.com/TheMetakey/AutoDoc"
         >
           View on Github
-        </a>
+        </Link>
       </div>
       <p className="max-w-xl mx-auto mb-20 text-xl text-center xl:max-w-2xl">
         AutoDoc generates codebase documention for git repositories using Large Language Models, like GPT-4, LLaMA or Alpaca

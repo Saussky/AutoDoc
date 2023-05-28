@@ -8,6 +8,7 @@ import Link from 'next/link';
 export default function Manual() {
     const [loading, setLoading] = useState<boolean>(false);
     const [textAreaInput, setTextAreaInput] = useState<string>('');
+    const [fileType, setFileType] = useState<'TS' | 'JS'>('TS');
     const [result, setResult] = useState<number>();
     const dispatch = useDispatch();
     const router = useRouter();
@@ -22,7 +23,7 @@ export default function Manual() {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ code: textAreaInput }),
+                body: JSON.stringify({ code: textAreaInput, fileType }),
             });
 
             const data = await response.json();
@@ -30,7 +31,7 @@ export default function Manual() {
                 throw data.error || new Error(`Request failed with status ${response.status}`);
             }
 
-            dispatch(updateCodeFiles([{code: textAreaInput, tsCode: data.codeFiles}]))
+            dispatch(updateCodeFiles([{ code: textAreaInput, tsCode: data.codeFiles }]))
             setResult(response.status);
         } catch (error) {
             console.error(error);
@@ -45,18 +46,18 @@ export default function Manual() {
             <Header LinksChild={() => {
                 return (
                     <div className="flex items-center md:block">
-                        <a
+                        <Link
                             className="rounded w-full mb-4 whitespace-no-wrap bg-indigo-600 btn btn-tall md:w-auto hover:bg-indigo-500 sm:mr-2"
                             href="/gui"
                         >
                             Connect
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                             className="rounded w-full mb-4 whitespace-no-wrap bg-gray-800 btn btn-tall md:w-auto hover:bg-gray-600 sm:ml-2"
                             href="https://github.com/TheMetakey/AutoDoc"
                         >
                             Upload
-                        </a>
+                        </Link>
                     </div>
                 );
             }} />
@@ -84,6 +85,18 @@ export default function Manual() {
                         />
                     </div>
                 </form>
+
+                <div className="relative inline-block w-10 align-middle select-none transition-duration-200 ease-in">
+                    <input
+                        type="checkbox"
+                        name="toggle"
+                        id="toggle"
+                        checked={fileType === 'JS'}
+                        onChange={() => setFileType((prev) => prev === 'TS' ? 'JS' : 'TS')}
+                        className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"
+                    />
+                    <label htmlFor="toggle" className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                </div>
 
                 <div className="mt-4">{result}</div>
 

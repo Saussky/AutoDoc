@@ -7,9 +7,10 @@ export default async function handler(
     res: any
 ) {
     const code = req.body.code
+    const fileType = req.body.fileType
 
     try {
-        const response = await tsDocify(code);
+        const response = await tsDocify(code, fileType);
         res.status(200).json({ codeFiles: response })
     } catch (err) {
         console.error(`Error adding TSDoc to file.`, err);

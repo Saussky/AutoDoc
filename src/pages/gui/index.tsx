@@ -84,18 +84,18 @@ export default function GUI() {
       <Header LinksChild={() => {
         return (
           <div className="flex items-center md:block">
-            <a
+            <Link
               className="rounded w-full mb-4 whitespace-no-wrap bg-indigo-600 btn btn-tall md:w-auto hover:bg-indigo-500 sm:mr-2"
               href="/gui"
             >
               Connect
-            </a>
-            <a
+            </Link>
+            <Link
               className="rounded w-full mb-4 whitespace-no-wrap bg-gray-800 btn btn-tall md:w-auto hover:bg-gray-600 sm:ml-2"
               href="https://github.com/TheMetakey/AutoDoc"
             >
               Upload
-            </a>
+            </Link>
 
           </div>
         )

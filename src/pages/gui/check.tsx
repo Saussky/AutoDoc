@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Code } from "../../components/gui/code";
 import router from "next/router";
 import Header from '@/components/Header';
+import Link from "next/link";
 
 export default function Check() {
   const codeFiles = useSelector((state: RootState) => state.files);
@@ -38,18 +39,18 @@ export default function Check() {
       <Header LinksChild={() => {
         return (
           <div className="flex items-center md:block mb-4">
-            <a
+            <Link
               className="rounded w-full mb-4 whitespace-no-wrap bg-indigo-600 btn btn-tall md:w-auto hover:bg-indigo-500 sm:mr-2"
               href="/gui"
             >
               Connect
-            </a>
-            <a
+            </Link>
+            <Link
               className="rounded w-full mb-4 whitespace-no-wrap bg-gray-800 btn btn-tall md:w-auto hover:bg-gray-600 sm:ml-2"
-              href="https://github.com/TheMetakey/AutoDoc"
+              href="https://github.com/Saussky/AutoDoc"
             >
               Upload
-            </a>
+            </Link>
 
           </div>
         )
