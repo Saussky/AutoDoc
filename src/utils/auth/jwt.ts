@@ -24,7 +24,7 @@ export default async function generateJWT(): Promise<string> {
      * The string contents of the private key used to sign the JWT. 
      * The key is read from a file
      */
-    const privateKey = fs.readFileSync('./private-key.pem');
+    const privateKey = Buffer.from(process.env.PEM_PRIVATE_KEY!, 'base64').toString('utf-8');
 
     /** 
      * The payload of the JWT. 

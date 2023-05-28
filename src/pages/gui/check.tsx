@@ -9,7 +9,6 @@ import Link from "next/link";
 
 export default function Check() {
   const codeFiles = useSelector((state: RootState) => state.files);
-  console.log('ccc', codeFiles)
   const [editable, setEditable] = useState<boolean[]>(
     codeFiles.map(() => false)
   );
