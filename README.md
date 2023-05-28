@@ -1,5 +1,9 @@
 ** Link
-https://auto-doc-kbqj.vercel.app/
+https://auto-doc-tau.vercel.app/
+CURRENTLY NOT WORKING - chatAPI requests take a long time and aren't compatible with Vercel's free limit of 10s per request.
+
+here's a demo link showing how it works, with some errors :)
+https://youtu.be/tXiv9Zf4p0Y
 
 ** Explanation
 
