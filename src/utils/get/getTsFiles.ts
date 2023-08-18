@@ -1,7 +1,5 @@
 import axios from 'axios';
-import * as dotenv from 'dotenv';
 
-dotenv.config()
 
 /**
 * Returns an array of TypeScript files within a GitHub repository at the specified URL.

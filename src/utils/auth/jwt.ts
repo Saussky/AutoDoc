@@ -1,6 +1,5 @@
 import jwt from 'jsonwebtoken';
 import * as dotenv from 'dotenv';
-import fs from 'fs';
 dotenv.config()
 
 

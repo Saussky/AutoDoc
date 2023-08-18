@@ -30,7 +30,7 @@ export const Home: React.FC = () => {
         </Link>
         <Link
           className="rounded w-full mb-4 whitespace-no-wrap bg-gray-800 btn btn-tall md:w-auto hover:bg-gray-600 sm:ml-2"
-          href="https://github.com/TheMetakey/AutoDoc"
+          href="https://github.com/Saussky/AutoDoc"
         >
           View on Github
         </Link>
