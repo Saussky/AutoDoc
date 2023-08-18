@@ -11,31 +11,7 @@ interface RequestBody {
     messages: Message[];
 }
 
-/**
- * Removes all the data that isn't in a code block.
- * @params content: the string to alter.
- * @returns all the code inside the code block
- */
-// function extractCodeBlock(content: string): string {
-//     const regex = /```[\s\S]*?```/g;
-//     const matches = content.match(regex);
 
-//     if (matches) {
-//         // Remove the first and last '```' from the extracted content
-//         const firstMatch = matches[0].slice(3, -3);
-//         const lastMatch = matches[matches.length - 1].slice(3, -3);
-
-//         if (matches.length === 1) {
-//             return firstMatch;
-//         } else {
-//             return firstMatch + '\n' + lastMatch;
-//         }
-//     }
-//     else {
-//         console.log(content)
-//         throw new Error('codeblock issue');
-//     }
-// }
 function extractCodeBlock(content: string): string {
     const regex = /```[\s\S]*?```/g;
     const matches = content.match(regex);

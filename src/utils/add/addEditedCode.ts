@@ -1,27 +1,6 @@
 import { GitHubResponse } from '@/context/codeSlice';
 import docify from '../openAI';
 
-const example = `
-import type { NextApiRequest, NextApiResponse } from 'next'
-import tsDocify from '@/utils/openAI';
-
-
-export default async function handler(
-    req: NextApiRequest,
-    res: any
-) {
-    const file = req.body.file
-
-    try {
-        const response = await tsDocify(file);
-        res.status(200).json({ codeFiles: response })
-    } catch (err) {
-        console.error('Error adding TSDoc to file.', err);
-        res.status(400).json({ error: 'Error adding TSDoc to file.' })
-    }
-
-}
-`
 
 export default async function addComments(filesArr: GitHubResponse[], fileType: 'JS' | 'TS') {
     const DELAY_MS = 350; // adjust this value to control the delay between requests
