@@ -84,6 +84,6 @@ export default async function createBranchAndUpdateFiles(
         console.log('finished updating github branch!')
     } catch (error) {
         console.log('error updating github branch:', error)
-        throw new Error("fuck")
+        throw new Error("woops")
     }
 }
