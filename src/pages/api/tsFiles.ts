@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import addCode from "@/utils/add/addCode"
-import addComments from '@/utils/add/addEditedCode';
+import addComments from '@/utils/add/addComments';
 import generateInstallToken from '@/utils/auth/install-id';
 import getDefaultBranch from '@/utils/get/getBranch';
 import getJsFiles from '@/utils/get/getJsFiles';
@@ -18,6 +18,8 @@ interface RequestBody {
   fileType: 'TS' | 'JS';
 }
 
+// This request takes a long time due to downloading github files and then sending through each one individually to OpenAI API
+// TODO: Setup a background worker that handles them individually and the user sees them get loaded 1 by 1 instead of waiting for the whole batch
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse

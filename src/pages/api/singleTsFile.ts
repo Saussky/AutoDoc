@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import addCode from "@/utils/add/addCode"
-import addComments from '@/utils/add/addEditedCode';
+import addComments from '@/utils/add/addComments';
 import getDefaultBranch from '@/utils/get/getBranch';
 import generateInstallToken from '@/utils/auth/install-id';
 import getSingleTSFile from '@/utils/get/getSingleTsFile';
